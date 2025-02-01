@@ -1,0 +1,26 @@
+{
+  "platform-version": "3.0",
+  "modules": {
+    "common": {
+      "events": {
+        "onAppInstall": {
+          "handler": "onAppInstallHandler"
+        },
+        "onAppUninstall": {
+          "handler": "onAppUninstallHandler"
+        }
+      }
+    },
+    "service_ticket": {
+      "events": {
+        "onConversationCreate": {
+          "handler": "onConversationCreate"
+        }
+      }
+    }
+  },
+  "engines": {
+    "node": "18.20.5",
+    "fdk": "9.3.0"
+  }
+}

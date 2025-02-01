@@ -1,0 +1,8 @@
+{
+  "Workspace ID": {
+    "display_name": "Workspace ID",
+    "description": "Insira o ID do Workspace",
+    "type": "number",
+    "required": true
+  }
+}
