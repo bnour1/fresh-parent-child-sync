@@ -1,10 +1,5 @@
 {
-  "lints": [
-    {
-      "severity": 1,
-      "value": "server\\server.js::6: Expected '===' and instead saw '=='."
-    }
-  ],
+  "lints": [],
   "coverage": {
     "server\\server.js": {
       "path": "server\\server.js",

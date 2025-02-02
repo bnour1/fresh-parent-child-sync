@@ -1,8 +1,14 @@
 {
-  "Workspace ID": {
+  "validWorkspaceId": {
     "display_name": "Workspace ID",
     "description": "Insira o ID do Workspace",
     "type": "number",
+    "required": true
+  },
+  "apiKey": {
+    "display_name": "API Key",
+    "description": "Insira uma chave de API Válida",
+    "type": "text",
     "required": true
   }
 }

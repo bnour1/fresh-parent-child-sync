@@ -1,0 +1,24 @@
+{
+    "postConversation": {
+        "schema": {
+            "method": "POST",
+            "host": "<%= current_host.endpoint_urls.freshservice.com %>",
+            "path": "/api/v2/tickets/<%= context.ticketId %>/conversations",
+            "headers": {
+                "Authorization": "Bearer <%= iparam.apiKey %>",
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    "viewTicketIncludeRelated": {
+        "schema": {
+            "method": "GET",
+            "host": "<%= current_host.endpoint_urls.freshservice.com %>",
+            "path": "/api/v2/tickets/<%= context.ticketId %>?include=related_tickets",
+            "headers": {
+                "Authorization": "Bearer <%= iparam.apiKey %>",
+                "Content-Type": "application/json"
+            }
+        }
+    }
+}

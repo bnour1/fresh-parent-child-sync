@@ -9,6 +9,10 @@
         "onAppUninstall": {
           "handler": "onAppUninstallHandler"
         }
+      },
+      "requests": {
+        "postConversation": {},
+        "viewTicketIncludeRelated": {}
       }
     },
     "service_ticket": {
