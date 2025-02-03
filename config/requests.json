@@ -1,23 +1,34 @@
 {
-    "postConversation": {
+    "postReply": {
         "schema": {
             "method": "POST",
-            "host": "<%= current_host.endpoint_urls.freshservice.com %>",
-            "path": "/api/v2/tickets/<%= context.ticketId %>/conversations",
+            "host": "<%= iparam.host %>",
+            "path": "/api/v2/tickets/<%= context.ticketId %>/reply",
             "headers": {
-                "Authorization": "Bearer <%= iparam.apiKey %>",
-                "Content-Type": "application/json"
+                "Authorization": "basic <%= iparam.apiKey %>",
+                "Content-Type": "<%= context.contentType %>"
             }
         }
     },
     "viewTicketIncludeRelated": {
         "schema": {
             "method": "GET",
-            "host": "<%= current_host.endpoint_urls.freshservice.com %>",
+            "host": "<%= iparam.host %>",
             "path": "/api/v2/tickets/<%= context.ticketId %>?include=related_tickets",
             "headers": {
-                "Authorization": "Bearer <%= iparam.apiKey %>",
+                "Authorization": "basic <%= iparam.apiKey %>",
                 "Content-Type": "application/json"
+            }
+        }
+    },
+    "downloadAttachment": {
+        "schema": {
+            "method": "GET",
+            "host": "<%= iparam.host %>",
+            "path": "/api/v2/attachments/<%= context.attachmentId %>",
+            "headers": {
+                "Authorization": "basic <%= iparam.apiKey %>",
+                "Content-Type": "application/pdf"
             }
         }
     }

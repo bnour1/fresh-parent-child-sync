@@ -7,7 +7,14 @@
   },
   "apiKey": {
     "display_name": "API Key",
-    "description": "Insira uma chave de API Válida",
+    "description": "Chave de API (Base 64)",
+    "type": "text",
+    "required": true,
+    "secure": true
+  },
+  "host": {
+    "display_name": "Freshservice Host",
+    "description": "domain.freshservice.com",
     "type": "text",
     "required": true
   }

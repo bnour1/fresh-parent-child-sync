@@ -11,8 +11,9 @@
         }
       },
       "requests": {
-        "postConversation": {},
-        "viewTicketIncludeRelated": {}
+        "postReply": {},
+        "viewTicketIncludeRelated": {},
+        "downloadAttachment": {}
       }
     },
     "service_ticket": {
@@ -26,5 +27,9 @@
   "engines": {
     "node": "18.20.5",
     "fdk": "9.3.0"
+  },
+  "dependencies": {
+    "axios": "0.21.1",
+    "form-data": "4.0.0"
   }
 }

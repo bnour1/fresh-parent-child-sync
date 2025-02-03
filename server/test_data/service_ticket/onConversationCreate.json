@@ -21,7 +21,7 @@
       "ticket_workspace_id": 7,
       "private": false,
       "incoming": false,
-      "source": 2,
+      "source": 0,
       "cc_emails": [
         "ram@freshdesk.com",
         "diana@freshdesk.com"
@@ -34,13 +34,13 @@
       "updated_at": "2015-07-09T13:08:06Z",
       "attachments": [
         {
-          "id": 9019290053,
-          "content_type": "image/jpeg",
-          "file_size": 78942,
-          "name": "sample.jpg",
-          "attachment_url": "https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/9019290053/original/sample.jpg",
-          "created_at": "2016-12-22T09:37:47Z",
-          "updated_at": "2016-12-22T09:37:47Z"
+          "attachment_url": "https://ssabrhelpdesk-ssabr-hml.attachments.freshservice.com/data/helpdesk/attachments/production/34000002345/original/Book-Aurora-Das-Flores.pdf?response-content-type=application/pdf&Expires=1738649574&Signature=VPIMppXuDlP-TOHOxLZfK-O1iByWuNyTIs68tO8YfuX-0tl88UgxQjhP0ZV~2F94a7dYo30nW5RJkrF3fFApTtmvZ9tOaXcZwCIvUpCdiJhkNulqK4vllYim4cdKJydbqAHbolGiw~aBIvpxomzSSEkAW6VNsKo0SV59c186ezqOxMB6oyuvqCPPLG4v72dmuhvccHf71q3Nv0Ele3RVtfUWnK-lCbgpeeQdb7pk04~qkFdFGMrzTSxN4d3mxprgS9-aOW-ph8dcifbfXG-7Nra82TngxVifBpISPXWno3XNPso0fAsROzEJYECjLg7O7O9xZgfXxCrnKuV6rp2GPw__&Key-Pair-Id=APKAIPHBXWY2KT5RCMPQ",
+          "content_type": "application/pdf",
+          "created_at": "2025-02-03T06:12:42Z",
+          "id": 34000002345,
+          "name": "Book-Aurora-Das-Flores.pdf",
+          "size": 13935052,
+          "updated_at": "2025-02-03T06:12:44Z"
         }
       ]
     },
