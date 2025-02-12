@@ -17,7 +17,8 @@ exports.execute = async function (conversation, apiKey) {
         } else {
             console.info(validationResult.message);
         }
-        return await services.sendReply.execute(parentId, body, formFiles, apiKey);
+        await services.sendReply.execute(parentId, body, formFiles, apiKey);
+        console.info(`Resposta enviada para o ticket pai (ID: ${parentId})`);
     } catch (error) {
         console.error("Erro ao processar execute:", error);
     }

@@ -5,12 +5,10 @@ const appUninstallHandler = require("./handlers/app/appUninstall");
 exports = {
   onConversationCreate: async function (args) {
     try {
-      const validationResult = await conversationCreateHandler.validate(args)
-      if (!validationResult) {
-        console.info(`Evento ignorado: ${validationResult.message}`);
+      const validScenario = await conversationCreateHandler.validate(args)
+      if (validScenario) {
+        await conversationCreateHandler.execute(args.data.conversation, args.iparams.apiKey)
       }
-      await conversationCreateHandler.execute(args.data.conversation, args.iparams.apiKey)
-      return;
     } catch (error) {
       console.error("Erro ao processar onConversationCreate:", error);
     }
