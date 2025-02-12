@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">64.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/14</span>
+                <span class='fraction'>11/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">55.55% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/8</span>
+                <span class='fraction'>5/9</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">64.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/14</span>
+                <span class='fraction'>11/17</span>
             </div>
         
             
@@ -82,67 +82,52 @@
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5.109351192408883e+294x</span>
-<span class="cline-any cline-yes">5.109351192408883e+294x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5.109351192408883e+294x</span>
-<span class="cline-any cline-yes">5.109351192408883e+294x</span>
-<span class="cline-any cline-yes">5.109351192408883e+294x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5.109351192408883e+294x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5.109351192408883e+294x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2.5546755962044414e+294x</span>
-<span class="cline-any cline-yes">2.5546755962044414e+294x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2.5546755962044414e+294x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const axios = require("axios");
-const FormData = require("form-data");
-&nbsp;
-exports.downloadAttachmentAsFormData = async function (attachment, apiKey) {
-    try {
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!attachment || !attachment.attachment_url || !attachment.name || !attachment.content_type) {
-<span class="cstat-no" title="statement not covered" >            console.error("Erro: Objeto de anexo inválido ou incompleto.");</span>
-<span class="cstat-no" title="statement not covered" >            return null;</span>
-        }
-        const { attachment_url, name, content_type} = attachment;
-        // Fazer a requisição para baixar o anexo
-        const response = await axios.get(attachment_url, {
-            responseType: "arraybuffer",
-            headers: { "Authorization": `Basic ${apiKey}`, "Accept": "*/*" }
-        });
-        // Criar FormData com o nome e content-type corretos
-        let formData = new FormData();
-        formData.append("attachments[]", response.data, { filename: name, contentType: content_type });
-        return { formData, filename: name, contentType: content_type };
-    } catch (error) {
-        console.error(`Erro ao baixar o anexo ${attachment.id}:`, error.response ? error.response.data : error.message);
-        return null;
-    }
-};
-&nbsp;</pre></td></tr></table></pre>
+<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span></td><td class="text"><pre class="prettyprint lang-js">Unable to lookup source: server\services\attachmentService.js (ENOENT: no such file or directory, open 'server\services\attachmentService.js')
+Error: Unable to lookup source: server\services\attachmentService.js (ENOENT: no such file or directory, open 'server\services\attachmentService.js')
+    at Context.defaultSourceLookup [as sourceFinder] (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\context.js:17:15)
+    at Context.getSource (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\context.js:71:21)
+    at annotateSourceCode (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-reports\lib\html\annotator.js:249:40)
+    at HtmlReport.onDetail (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-reports\lib\html\index.js:414:33)
+    at Visitor.value (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:38:38)
+    at ReportNode.visit (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:88:21)
+    at C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:92:19
+    at Array.forEach (<anonymous>)
+    at ReportNode.visit (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:91:28)
+    at C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:92:19
+    at Array.forEach (<anonymous>)
+    at ReportNode.visit (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:91:28)
+    at ReportTree.visit (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:127:24)
+    at HtmlReport.execute (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\report-base.js:12:44)
+    at Object.update (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\lib\utils\coverage.js:129:20)
+    at Timeout._onTimeout (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\lib\event_handler\framework.js:154:24)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-03T06:10:46.302Z
+                at 2025-02-12T20:52:00.376Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

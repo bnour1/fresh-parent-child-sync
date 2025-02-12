@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -75,38 +75,59 @@
 <a name='L10'></a><a href='#L10'>10</a>
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
-<a name='L13'></a><a href='#L13'>13</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1.572340424928402e+57x</span>
-<span class="cline-any cline-yes">3.094850098213451e+26x</span>
-<span class="cline-any cline-yes">3.094850098213451e+26x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1.5474250491067253e+26x</span>
-<span class="cline-any cline-yes">1.5474250491067253e+26x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">exports.getParentTicketId = async function (ticketId) {
-    try {
-        const data = await $request.invokeTemplate("viewTicketIncludeRelated", {
-            context: { ticketId }
-        });
-        const ticketData = JSON.parse(data.response);
-        return ticketData?.ticket?.related_tickets?.parent_id || <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >        console.error("Erro ao buscar ticket pai:", error);</span>
-<span class="cstat-no" title="statement not covered" >        return null;</span>
-    }
-};
-&nbsp;</pre></td></tr></table></pre>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span></td><td class="text"><pre class="prettyprint lang-js">Unable to lookup source: server\services\ticketService.js (ENOENT: no such file or directory, open 'server\services\ticketService.js')
+Error: Unable to lookup source: server\services\ticketService.js (ENOENT: no such file or directory, open 'server\services\ticketService.js')
+    at Context.defaultSourceLookup [as sourceFinder] (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\context.js:17:15)
+    at Context.getSource (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\context.js:71:21)
+    at annotateSourceCode (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-reports\lib\html\annotator.js:249:40)
+    at HtmlReport.onDetail (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-reports\lib\html\index.js:414:33)
+    at Visitor.value (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:38:38)
+    at ReportNode.visit (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:88:21)
+    at C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:92:19
+    at Array.forEach (<anonymous>)
+    at ReportNode.visit (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:91:28)
+    at C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:92:19
+    at Array.forEach (<anonymous>)
+    at ReportNode.visit (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:91:28)
+    at ReportTree.visit (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:127:24)
+    at HtmlReport.execute (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\node_modules\istanbul-lib-report\lib\report-base.js:12:44)
+    at Object.update (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\lib\utils\coverage.js:129:20)
+    at Timeout._onTimeout (C:\Users\Bruno Washington\AppData\Roaming\npm\node_modules\fdk\lib\event_handler\framework.js:154:24)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-03T06:10:46.302Z
+                at 2025-02-12T20:52:00.376Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
