@@ -7,7 +7,7 @@ exports = {
     try {
       const validScenario = await conversationCreateHandler.validate(args)
       if (validScenario) {
-        await conversationCreateHandler.execute(args.data.conversation, args.iparams.apiKey)
+        await conversationCreateHandler.execute(args.data.conversation, args.iparams)
       }
     } catch (error) {
       console.error("Erro ao processar onConversationCreate:", error);

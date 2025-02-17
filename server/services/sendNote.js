@@ -1,17 +1,18 @@
 const FormData = require("form-data");
 const axios = require("axios");
 
-exports.execute = async function (ticketId, message, attachments, iparams) {
+exports.execute = async function (ticketId, message, attachments, iparams, isPrivate) {
     try {
         const formData = new FormData();
         formData.append("body", message);
+        formData.append("private", isPrivate.toString());
         attachments.forEach(({ formData: file, filename, contentType }) => {
             if (file) {
                 formData.append("attachments[]", file.getBuffer(), { filename, contentType });
             }
         });
         await axios.post(
-            `https://${iparams.host}/api/v2/tickets/${ticketId}/reply`,
+            `https://${iparams.host}/api/v2/tickets/${ticketId}/notes`,
             formData,
             {
                 headers: {
@@ -23,6 +24,7 @@ exports.execute = async function (ticketId, message, attachments, iparams) {
             }
         );
     } catch (error) {
-        console.error(`Erro ao enviar resposta para o ticket ${ticketId}:`, error.response ? error.response.data : error.message);
+        throw new Error(`Erro ao enviar Nota para o ticket ${ticketId}: ${error.response ? JSON.stringify(error.response.data) : error.message}`);
     }
+    
 };

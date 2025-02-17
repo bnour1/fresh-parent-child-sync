@@ -9,7 +9,7 @@ class ValidationChain {
     }
 
     async execute(data) {
-        const result = { isValid: true, message: "" };
+        const result = { isValid: true, message: ""};
 
         for (const rule of this.rules) {
             const ruleResult = await rule.validate(data);

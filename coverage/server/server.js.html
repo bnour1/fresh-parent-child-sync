@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.23% </span>
+                <span class="strong">72.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/13</span>
+                <span class='fraction'>8/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.23% </span>
+                <span class="strong">72.72% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/13</span>
+                <span class='fraction'>8/11</span>
             </div>
         
             
@@ -85,28 +85,28 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4.39347050248359e+158x</span>
-<span class="cline-any cline-yes">4.39347050248359e+158x</span>
-<span class="cline-any cline-yes">4.39347050248359e+158x</span>
+<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7.307508186654518e+47x</span>
+<span class="cline-any cline-yes">7.307508186654518e+47x</span>
+<span class="cline-any cline-yes">7.307508186654518e+47x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4.39347050248359e+158x</span>
+<span class="cline-any cline-yes">7.307508186654518e+47x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4.39347050248359e+158x</span>
-<span class="cline-any cline-yes">4.39347050248359e+158x</span>
-<span class="cline-any cline-yes">4.39347050248359e+158x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4.39347050248359e+158x</span>
-<span class="cline-any cline-yes">4.39347050248359e+158x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7.307508186654518e+47x</span>
+<span class="cline-any cline-yes">7.307508186654518e+47x</span>
+<span class="cline-any cline-yes">7.307508186654518e+47x</span>
+<span class="cline-any cline-yes">110592x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const conversationCreateHandler = require("./handlers/conversation/conversationCreateHandler");
 const appInstallHandler = require("./handlers/app/appInstall");
 const appUninstallHandler = require("./handlers/app/appUninstall");
@@ -115,20 +115,20 @@ exports = {
   onConversationCreate: async function (args) {
     try {
       const validScenario = await conversationCreateHandler.validate(args)
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (validScenario) {
-<span class="cstat-no" title="statement not covered" >        await conversationCreateHandler.execute(args.data.conversation</span>, args.iparams.apiKey)
+      if (validScenario) {
+        await conversationCreateHandler.execute(args.data.conversation, args.iparams)
       }
     } catch (error) {
-      console.error("Erro ao processar onConversationCreate:", error);
+<span class="cstat-no" title="statement not covered" >      console.error("Erro ao processar onConversationCreate:", error);</span>
     }
-  },<span class="cstat-no" title="statement not covered" ></span>
-  onAppInstallHandler: function (args) {
-    appInstallHandler.execute(args)
-  },<span class="fstat-no" title="function not covered" ></span>
-  on<span class="cstat-no" title="statement not covered" >AppUninstallHandler: function (a</span>rgs) {
-    appUninstallHandler.execute(args)
-  }<span class="fstat-no" title="function not covered" ></span>
-};<span class="cstat-no" title="statement not covered" ></span>
+  },
+  onAppInstallHandler: <span class="fstat-no" title="function not covered" >fu</span>nction (args) {
+<span class="cstat-no" title="statement not covered" >    appInstallHandler.execute(args)</span>
+  },
+  onAppUninstallHandler: <span class="fstat-no" title="function not covered" >fu</span>nction (args) {
+<span class="cstat-no" title="statement not covered" >    appUninstallHandler.execute(args)</span>
+  }
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -136,7 +136,7 @@ exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-12T20:52:00.376Z
+                at 2025-02-17T14:35:59.753Z
             </div>
         <script src="../prettify.js"></script>
         <script>

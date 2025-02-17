@@ -1,11 +1,11 @@
-const { AttachmentValidation } = require("./AttachmentValidation");
-const { ParentTicketValidation } = require("./ParentTicketValidation");
+const { ParentChildValidation } = require("./ParentChildValidation");
 const { SourceValidation } = require("./SourceValidation");
 const { WorkspaceValidation } = require("./WorkspaceValidation");
+const { ActorValidation } = require("./ActorValidation");
 
 exports = {
-    AttachmentValidation,
-    ParentTicketValidation,
+    ParentChildValidation,
     SourceValidation,
-    WorkspaceValidation
+    WorkspaceValidation,
+    ActorValidation
 };

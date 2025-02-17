@@ -2,37 +2,39 @@ const helpers = require("../../helpers/index")
 const rules = require("./rules/index");
 const services = require("../../services/index");
 
-exports.execute = async function (conversation, apiKey) {
-    try {
-        const parentId = await services.getParentTicketId.execute(conversation.ticket_id);
-        let formFiles = []
-        const { attachments, body } = conversation;
-        const validationResult = await new helpers.ValidationChain()
-            .addRule(new rules.AttachmentValidation())
-            .execute({ attachments });
+const MAX_ATTACHMENT_SIZE = 10 * 1024 * 1024; // 10MB
 
-        if (validationResult.isValid) {
-            formFiles = (await Promise.all(attachments.map(services.downloadAttachment.execute)))
-                .filter(file => file !== null);
-        } else {
-            console.info(validationResult.message);
+exports.execute = async function (conversation, iparams) {
+    try {
+        const { attachments, body, ticket_id, source, private: isPrivate } = conversation;
+        let formFiles = [];
+        if (attachments.length > 0) {
+            const totalSize = attachments.reduce((sum, { size = 0 }) => sum + size, 0);
+            if (totalSize <= MAX_ATTACHMENT_SIZE) {
+                formFiles = (await Promise.all(attachments.map(services.downloadAttachment.execute)))
+                    .filter(file => file !== null);
+            } else {
+                await services.sendNote.execute(ticket_id, "Anexos da resposta enviada excedem o tamanho permitido (10MB) por favor anexar arquivos diretamente no ticket relacionado", formFiles, iparams, true);
+            }
         }
-        await services.sendReply.execute(parentId, body, formFiles, apiKey);
-        console.info(`Resposta enviada para o ticket pai (ID: ${parentId})`);
+        const relatedTickets = await services.getRelatedTickets.execute(ticket_id);
+        const ticketDestinationId = Array.isArray(relatedTickets) ? relatedTickets.at(-1) : relatedTickets;
+        const sendMessage = source === 2 ? services.sendNote : services.sendReply;
+        await sendMessage.execute(ticketDestinationId, body, formFiles, iparams, isPrivate);
+        console.info(`Conversa replicada (Origem: Ticket #${ticket_id} ➝ Destino: Ticket #${ticketDestinationId})`);
     } catch (error) {
-        console.error("Erro ao processar execute:", error);
+        console.error("Erro ao processar conversationCreateHandler:", error);
     }
 };
 
-
 exports.validate = async function (args) {
     const validationChain = new helpers.ValidationChain()
+        .addRule(new rules.ActorValidation())
         .addRule(new rules.WorkspaceValidation(args.iparams.validWorkspaceId))
-        .addRule(new rules.SourceValidation(0))
-        .addRule(new rules.ParentTicketValidation());
-    const validationResult = await validationChain.execute(args.data.conversation);
+        .addRule(new rules.ParentChildValidation())
+        .addRule(new rules.SourceValidation([0, 2]));
+    const validationResult = await validationChain.execute(args.data);
     if (!validationResult.isValid) {
-        console.info(`Evento ignorado: ${validationResult.message}`);
         return false;
     }
     return true;

@@ -3,11 +3,12 @@ class SourceValidation {
         this.expectedSource = expectedSource;
     }
 
-    validate(conversation) {
-        if (conversation.source !== this.expectedSource) {
+    validate(data) {
+        const { conversation } = data
+        if (!this.expectedSource.includes(conversation.source) || conversation.private) {
             return { isValid: false, message: `Fonte inválida (${conversation.source}). Esperado: ${this.expectedSource}` };
         }
-        return { isValid: true };
+        return {isValid: true};
     }
 }
 

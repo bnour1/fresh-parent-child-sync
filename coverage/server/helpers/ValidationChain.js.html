@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -89,52 +89,52 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2.164900497171598e+133x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7.115779502999922e+133x</span>
+<span class="cline-any cline-yes">7.115779502999922e+133x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2.164900497171598e+133x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2.164900497171598e+133x</span>
+<span class="cline-any cline-yes">4.844408489569954e+133x</span>
+<span class="cline-any cline-yes">3.708722982858068e+133x</span>
+<span class="cline-any cline-yes">2.065799902469527e+121x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1.0292149904576465e+133x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1.6502930019427748e+133x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">class ValidationChain {
-<span class="fstat-no" title="function not covered" >    co</span>nstructor() {
-<span class="cstat-no" title="statement not covered" >        this.rules = [];</span>
+    constructor() {
+        this.rules = [];
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    ad</span>dRule(rule) {
-<span class="cstat-no" title="statement not covered" >        this.rules.push(rule);</span>
-<span class="cstat-no" title="statement not covered" >        return this; </span>// Permite encadeamento fluido (ex: `chain.addRule().addRule()`)
+    addRule(rule) {
+        this.rules.push(rule);
+        return this; // Permite encadeamento fluido (ex: `chain.addRule().addRule()`)
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    as</span>ync execute(data) {
-        const result = <span class="cstat-no" title="statement not covered" >{ isValid: true, message: "" };</span>
+    async execute(data) {
+        const result = { isValid: true, message: ""};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        for (const rule of this.rules) {</span>
-            const ruleResult = <span class="cstat-no" title="statement not covered" >await rule.validate(data);</span>
-<span class="cstat-no" title="statement not covered" >            <span class="missing-if-branch" title="if path not taken" >I</span>if (!ruleResult.isValid) {</span>
-<span class="cstat-no" title="statement not covered" >                return ruleResult; </span>// Retorna erro imediatamente se alguma validação falhar
+        for (const rule of this.rules) {
+            const ruleResult = await rule.validate(data);
+            if (!ruleResult.isValid) {
+                return ruleResult; // Retorna erro imediatamente se alguma validação falhar
             }
         }
-<span class="cstat-no" title="statement not covered" >        return result;</span>
+        return result;
     }
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >exports =  { ValidationChain }</span>
+exports =  { ValidationChain }
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -142,7 +142,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-12T20:52:00.376Z
+                at 2025-02-17T14:35:59.753Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

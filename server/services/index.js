@@ -1,5 +1,6 @@
 const sendReply = require("./sendReply");
+const sendNote = require("./sendNote");
 const downloadAttachment = require("./downloadAttachment");
-const getParentTicketId = require("./getParentTicketId");
+const getRelatedTickets = require("./getRelatedTickets");
 
-exports = { downloadAttachment, getParentTicketId, sendReply};
+exports = { downloadAttachment, getRelatedTickets, sendReply, sendNote };
