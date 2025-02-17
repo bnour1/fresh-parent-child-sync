@@ -5572,5 +5572,30 @@
       "hash": "9896916f2bca82aae84548c9226b02e7cbec7912"
     }
   },
-  "coverageSummary": {}
+  "coverageSummary": {
+    "lines": {
+      "total": 235,
+      "covered": 151,
+      "skipped": 0,
+      "pct": 64.25
+    },
+    "statements": {
+      "total": 238,
+      "covered": 153,
+      "skipped": 0,
+      "pct": 64.28
+    },
+    "functions": {
+      "total": 39,
+      "covered": 25,
+      "skipped": 0,
+      "pct": 64.1
+    },
+    "branches": {
+      "total": 85,
+      "covered": 44,
+      "skipped": 0,
+      "pct": 51.76
+    }
+  }
 }
